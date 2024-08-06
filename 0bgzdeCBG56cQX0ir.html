@@ -1,0 +1,589 @@
+<html><head><base href="https://www.digitalvibesagency.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Vibes Agency - Servicios Digitales Futuristas</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root {
+  --primary-color: #00FFFF;
+  --secondary-color: #FF00FF;
+  --bg-color: #0A0A0A;
+  --text-color: #E0E0E0;
+  --accent-color: #7700FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary-color), 0 0 20px var(--primary-color);
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary-color), 0 0 40px var(--primary-color);
+  }
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* Services Section */
+.services {
+  padding: 100px 0;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* About Section */
+.about {
+  padding: 100px 0;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Contact Section */
+.contact {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 30px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Blog Section */
+.blog {
+  padding: 100px 0;
+}
+
+.blog h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h3 {
+  margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 100px 0;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.testimonial-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 100px 0;
+}
+
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-text {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+}
+</style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo">Digital Vibes Agency</a>
+      <ul class="nav-links">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <h1>Digital Vibes Agency</h1>
+      <p>Digital Vibes Agency ofrece una amplia gama de servicios digitales y tecnológicos para satisfacer todas tus necesidades. Desde la venta de programas para PC Windows hasta la restauración de fotos antiguas, estamos aquí para ayudarte a llevar tu experiencia digital al siguiente nivel.</p>
+      <a href="#services" class="btn">Descubre nuestros servicios</a>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <i class="fas fa-desktop"></i>
+          <h3>Programas para PC Windows</h3>
+          <p>Venta de software legítimo y actualizado, incluyendo la suite completa de Adobe 2024 full de por vida.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-film"></i>
+          <h3>Música, Películas y Videos</h3>
+          <p>Descarga y acceso a contenido multimedia de alta calidad.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-book"></i>
+          <h3>Libros Digitales</h3>
+          <p>Una vasta colección de ebooks para todos los gustos.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-users"></i>
+          <h3>Community Manager</h3>
+          <p>Gestión profesional de redes sociales para aumentar tu presencia online.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-tools"></i>
+          <h3>Servicio Técnico de Computadores</h3>
+          <p>Reparación y mantenimiento de equipos con garantía de calidad.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-camera-retro"></i>
+          <h3>Restauración de Fotos Antiguas con IA</h3>
+          <p>Revive tus recuerdos con nuestras restauraciones profesionales y combos de fotos.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-heart"></i>
+          <h3>Seguidores para Redes Sociales</h3>
+          <p>Aumenta tu influencia en Instagram con seguidores y likes reales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-content">
+      <div class="about-text">
+        <h2>Sobre Nosotros</h2>
+        <p>Digital Vibes Agency nació de la pasión por la tecnología y la innovación. Fundada por Andrés, un especialista en tecnología, informática e inteligencia artificial, nuestra agencia ha evolucionado para convertirse en un referente en el mercado digital.</p>
+        <p>Andrés, además de ser el cerebro detrás de Digital Vibes, es un talentoso DJ Productor conocido como Tecno Andretix, fusionando así su amor por la tecnología y la música.</p>
+        <p>Ubicados en Bogotá, Colombia, ofrecemos nuestros servicios a nivel global, llevando la vanguardia digital a todos los rincones del mundo.</p>
+      </div>
+      <div class="about-image">
+        <img src="/about-image?t=futuristic+digital+agency+office&w=500&h=500" alt="Oficina futurista de Digital Vibes Agency" width="500" height="500">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <p>¿Listo para llevar tu presencia digital al siguiente nivel? ¡Contáctanos ahora!</p>
+      <a href="https://wa.me/573003338504" class="contact-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chatea con nosotros
+      </a>
+    </div>
+  </section>
+
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2>Blog Digital Vibes</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="/blog-image?t=latest+tech+trends&w=300&h=200" alt="Últimas tendencias tecnológicas" width="300" height="200">
+          <div class="blog-content">
+            <h3>Últimas Tendencias en Tecnología</h3>
+            <p>Descubre las innovaciones que están transformando el mundo digital.</p>
+            <a href="/blog/tech-trends">Leer más</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <img src="/blog-image?t=electronic+music+production&w=300&h=200" alt="Producción de música electrónica" width="300" height="200">
+          <div class="blog-content">
+            <h3>El Arte de la Música Electrónica</h3>
+            <p>Explorando las técnicas de producción de Tecno Andretix.</p>
+            <a href="/blog/electronic-music">Leer más</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <img src="/blog-image?t=digital+services+guide&w=300&h=200" alt="Guía de servicios digitales" width="300" height="200">
+          <div class="blog-content">
+            <h3>Guía de Servicios Digitales</h3>
+            <p>Cómo aprovechar al máximo nuestros servicios digitales.</p>
+            <a href="/blog/digital-services-guide">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <img src="/testimonial-avatar?t=happy+client&w=100&h=100" alt="Cliente satisfecho" width="100" height="100">
+          <h3>María G.</h3>
+          <p>"Digital Vibes transformó completamente mi presencia en línea. ¡Increíble servicio!"</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="/testimonial-avatar?t=tech+enthusiast&w=100&h=100" alt="Entusiasta de la tecnología" width="100" height="100">
+          <h3>Carlos R.</h3>
+          <p>"Los programas que adquirí funcionan perfectamente. Servicio confiable y profesional."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="/testimonial-avatar?t=social+media+influencer&w=100&h=100" alt="Influencer de redes sociales" width="100" height="100">
+          <h3>Laura M.</h3>
+          <p>"Gracias a Digital Vibes, mis seguidores en Instagram crecieron exponencialmente. ¡Recomendado!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2>Galería de Trabajos</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/gallery-image?t=restored+vintage+photo&w=300&h=300" alt="Foto antigua restaurada" width="300" height="300">
+        </div>
+        <div class="gallery-item">
+          <img src="/gallery-image?t=social+media+management&w=300&h=300" alt="Gestión de redes sociales" width="300" height="300">
+        </div>
+        <div class="gallery-item">
+          <img src="/gallery-image?t=computer+repair&w=300&h=300" alt="Reparación de computadora" width="300" height="300">
+        </div>
+        <div class="gallery-item">
+          <img src="/gallery-image?t=music+production+studio&w=300&h=300" alt="Estudio de producción musical" width="300" height="300">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Digital Vibes Agency. Todos los derechos reservados.</p>
+      <a href="/privacy-policy">Política de Privacidad</a>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/573003338504" class="whatsapp-button" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Parallax effect for hero section
+    window.addEventListener('scroll', function() {
+      const parallax = document.querySelector('.hero');
+      let scrollPosition = window.pageYOffset;
+      parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    });
+
+    // Animate service cards on scroll
+    const serviceCards = document.querySelectorAll('.service-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    serviceCards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
